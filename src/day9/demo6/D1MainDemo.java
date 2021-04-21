@@ -1,4 +1,4 @@
-package day9.demo2;
+package day9.demo6;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -18,6 +18,7 @@ public class D1MainDemo {
 	}
 
 	static void demo3() {
+		// UDD
 		List<Person> list = new ArrayList<>();
 
 		list.add(new Person(11, "rohit", "rohit@gmail.com", "2323232"));
@@ -28,20 +29,31 @@ public class D1MainDemo {
 
 		// sorting by id
 		System.out.println("sorted by id");
-		// Collections.sort(list, Comparator.comparing((Person p ) -> p.getId()));
+		
+		
+		// Approach 0
+		list.sort((o1, o2) ->  o1.getId() - o2.getId());
+
+		// Approch 1 
+		Comparator<Person> ci = (o1, o2) ->  o1.getId() - o2.getId(); 
+		Collections.sort(list, ci);
+		
+		// Approach 2
+		Collections.sort(list, (o1, o2) ->  o1.getId() - o2.getId());
+		
+
+		
+		
+		
+		
+		
+		
+		// Lamda has been further simplified using Method Refrerece
+		Collections.sort(list, Comparator.comparing( (Person p) -> p.getId() ));
 		Collections.sort(list, Comparator.comparing(Person::getId));
-		System.out.println(list);
-
-		// sorting by name
-		System.out.println("Sorted by name");
-		Collections.sort(list, Comparator.comparing(Person::getName));
-		System.out.println(list);
-
-		// sorting by email
-		System.out.println("Sorted by mobile");
-		Collections.sort(list, Comparator.comparing(Person::getMobile));
-		System.out.println(list);
 
 	}
 
 }
+
+

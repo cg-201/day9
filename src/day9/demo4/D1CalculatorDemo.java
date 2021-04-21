@@ -15,6 +15,7 @@ public class D1CalculatorDemo {
 		SumInterface sumi = (n1, n2) -> n1 + n2;
 		System.out.println(sumi.sum(10, 10));
 		
+		
 		// Divide interface
 		DivideInterface di = (n1, n2) -> {
 			if(n2 == 0) {
@@ -29,26 +30,37 @@ public class D1CalculatorDemo {
 }
 
 
+@FunctionalInterface
 interface HelloInterface{
 	String sayHello(String name);
 }
 
+@FunctionalInterface
 interface SquareInterface{
 	int square(int n1);
 }
 
+@FunctionalInterface
 interface SumInterface{
 	int sum(int n1, int n2);
 }
 
+@FunctionalInterface
 interface DiffInterface{
 	int difference(int n1, int n2);
 }
 
+@FunctionalInterface
 interface MultiplyInterface{
 	double multiply(double n1, int n2);
 }
 
+@FunctionalInterface
 interface DivideInterface{
 	double divide(double n1, double n2);
+}
+
+@FunctionalInterface
+interface CubeInterface {
+	double cube(int n);
 }
